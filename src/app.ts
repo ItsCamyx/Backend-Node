@@ -15,6 +15,11 @@ router.get('/', (req: Request, res: Response) => {
     res.send(helloworld);
 });
 
+router.get('/welcome', (req: Request, res: Response) => {
+    const welcome = {message:'Hello World!'}
+    res.send(welcome);
+});
+
 app.use(router);
 
 app.listen(port, () => {
