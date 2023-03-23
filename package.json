@@ -1,0 +1,26 @@
+{
+  "name": "backend-node",
+  "version": "1.0.0",
+  "description": "This repository is a pratice of the node couse offer by MJV School",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsCamyx/Backend-Node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItsCamyx/Backend-Node/issues"
+  },
+  "homepage": "https://github.com/ItsCamyx/Backend-Node#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.2"
+  }
+}
