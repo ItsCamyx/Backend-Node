@@ -63,10 +63,11 @@ class ProductService {
   verifyIdProduct(product: Product) {
     const id = product.id;
     const productId = this.products.find((product) => product.id === id);
+    const sorted = this.products.sort((a, b) => a.id - b.id);
     if (productId !== undefined) {
       console.info("ID já existe, adicionando um novo ID");
       const newID = {
-        id: this.products.length + 1,
+        id: sorted[sorted.length - 1].id + 1,
         description: product.description,
         img: product.img,
         price: product.price,
