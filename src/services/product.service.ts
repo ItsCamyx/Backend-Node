@@ -19,26 +19,6 @@ class ProductService {
   deleteProduct(id: number) {
     return ProductRepository.delete(id);
   }
-
-  verifyIdProduct(product: typeof Product) {
-    const id = product.id;
-    const productId = this.products.find((product) => product.id === id);
-    const sorted = this.products.sort((a, b) => a.id - b.id);
-    if (productId !== undefined) {
-      console.info("ID já existe, adicionando um novo ID");
-      const newID = {
-        id: sorted[sorted.length - 1].id + 1,
-        description: product.description,
-        img: product.img,
-        price: product.price,
-        quantity: product.quantity,
-      };
-      console.log(newID);
-      return newID;
-    } else {
-      return product;
-    }
-  }
 }
 
 export default new ProductService();
