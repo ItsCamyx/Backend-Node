@@ -6,22 +6,26 @@ import { Product } from "../models/product.model";
 const router = Router();
 
 router.get("/", (req: Request, res: Response) => {
-  let products = ProductService.getAll();
-  res.send(products);
+  ProductService.getAll()
+    .then((products) => {
+      res.json(products);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 router.post("/", (req: Request, res: Response) => {
   const { description, img, price, quantity } = req.body;
 
-  const newProduct: Product = {
-    id: products.length + 1,
+  const newProduct: typeof Product = {
     description,
     img,
     price,
     quantity,
   };
   const verifyID = ProductService.verifyIdProduct(newProduct);
-  const product: Product = ProductService.createProduct(verifyID);
+  const product: typeof Product = ProductService.createProduct(verifyID);
   if (product) {
     res.status(201).send({ message: "Produto criado com sucesso" });
   } else {
